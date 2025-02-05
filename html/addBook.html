@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex flex-col border border-gray-400 bg-slate-300 shadow-xl rounded-lg p-6 shadow-md w-[60%] mx-auto mt-10">
+        <form class="text-2xl font-bold text-gray-800 mb-2 w-full mt-2 p-4" >
+            <h1 class="text-3xl font-bold text-gray-800 mb-2 text-center">Add Book</h1>
+
+            <label for="title" class="text-gray-700 font-medium ">Book Title</label><br>
+            <input type="text" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required placeholder="Enter the book name"><br>
+
+            <label for="image" class="text-gray-700 font-medium ">Book Image</label><br>
+            <input type="file" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required placeholder="Enter the book name"><br>
+
+            <label for="author" class="text-gray-700 font-medium">Author Name</label><br>
+            <input type="text"  class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required><br>
+            <label for="category" class="text-gray-700 font-medium ">Book Category</label><br>
+            <select class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option selected>Science</option>
+                <option>Academic</option>
+                <option>Fiction</option>
+            </select><br>
+            <label for="edition" class="text-gray-700 font-medium mb-2" >Edition</label><br>
+            <input type="text" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"  ><br>
+            <label for="year" class="text-gray-700 font-medium mb-2" >Published Year</label><br>
+            <input type="date" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"  ><br>
+            <label for="description" class="text-gray-700 font-medium">Description</label><br>
+            <textarea name="description" id="description" rows="5" maxlength="500" class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea><br><br>
+            <div class="flex gap-4">
+                <button type="submit" value="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600" >Add Book</button>
+                <button type="reset" value="reset"  class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 ">Reset</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Haven</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="bg-gray-800 p-4  fixed top-0 left-0 w-full z-10">
+        <div class="flex items-center justify-between">
+            <a href="#" class="text-white text-4xl italic font-bold">Book Haven</a>
+            <div class="space-x-8">
+                <a href="index.html" class="text-white text-2xl hover:text-gray-400">Home</a>
+                <a href="viewBook.html" class="text-white text-2xl hover:text-gray-400">Catalog</a>
+                <a href="AboutUs.html" class="text-white text-2xl hover:text-gray-400">About Us</a>
+                <button class="bg-blue-500 text-2xl text-white py-2 px-4  rounded hover:bg-blue-600"><a href="UserLogin.html">Log in</a></button>
+            </div>    
+        </div>
+    </nav>
+    <!-- Intro section -->
+    <div class="relative bg-cover mt-10 bg-center h-[700px] w-full" style="background-image: url('/images/IntroBackground.webp');">
+        <div class="absolute inset-0 bg-opacity-50">
+            <h1 class="text-3xl font-bold italic mt-12 ml-12">Hello Readers,<br>welcome to<span class="text-blue-400 text-6xl"> Book Haven</span></h1>
+            <p class="w-[400px] mt-10 ml-12 text-2xl italic">Discover a world of knowledge, imagination, and inspiration at your fingertips. Whether you're here to explore new stories, dive into research, or simply 
+                enjoy a quiet corner to read, our library is here to support your journey. Explore our extensive collection, access digital resources, or join community events 
+                designed for curious minds of all ages.<br><br>We're thrilled to have you here—happy reading! 📚✨. </p>
+        </div>
+    </div>
+
+     <div class="container mx-auto p-6 flex flex-rows gap-10">
+        <section class="mb-8 mt-10 text-center border-4 border-dashed border-red-500 rounded-2xl p-6 shadow-lg bg-gray-200 h-[600px]">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Important Announcements</h2>
+            <img src="/images/announcement.jpg" alt="Christmas greetings banner" class="mx-auto rounded-lg shadow-md">
+            <p class="mt-4 text-xl text-gray-700">Library stays closed on 25th December due to Christmas Holiday</p>
+        </section>
+    
+        <!-- New Arrivals Section -->
+        <section class="bg-gray-200 rounded-2xl shadow-lg h-[600px] mt-10 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800 text-center mt-12 text-3xl italic">New Arrivals</h2>
+            <div class="grid lg:grid-cols-5 gap-4 p-4">
+                <img src="/images/book003.jpeg" class="rounded-lg shadow-sm hover:shadow-lg transition-shadow w-[300px] h-[400px]">
+                <img src="/images/book005.jpeg" class="rounded-lg shadow-sm hover:shadow-lg transition-shadow w-[300px] h-[400px]">
+                <img src="/images/book0010.jpeg" class="rounded-lg shadow-sm hover:shadow-lg transition-shadow w-[300px] h-[400px]">
+                <img src="/images/book009.jpeg" class="rounded-lg shadow-sm hover:shadow-lg transition-shadow w-[300px] h-[400px]">
+                <img src="/images/book009.jpeg" class="rounded-lg shadow-sm hover:shadow-lg transition-shadow w-[300px] h-[400px]">
+            </div>
+        </section>
+    </div>
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Book Haven Library. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="bg-gray-800 p-4  fixed top-0 left-0 w-full z-10">
+        <div class="flex items-center justify-between">
+            <a href="#" class="text-white text-4xl italic font-bold">Book Haven</a>
+            <div class="space-x-8">
+                <a href="index.html" class="text-white text-2xl hover:text-gray-400">Home</a>
+                <a href="viewBook.html" class="text-white text-2xl hover:text-gray-400">Catalog</a>
+                <a href="AboutUs.html" class="text-white text-2xl hover:text-gray-400">About Us</a>
+                <button class="bg-blue-500 text-2xl text-white py-2 px-4  rounded hover:bg-blue-600"><a href="UserLogin.html">Log in</a></button>
+            </div>    
+        </div>
+    </nav>
+    <div class="mt-[80px] p-4 bg-slate-200 flex flex-row justify-between">
+        <h1 class="text-3xl text-blue-800 font-bold ml-10 ">Library Admin Dashboard</h1>
+        <button class="bg-blue-500 text-2xl text-white py-2 px-4  rounded hover:bg-blue-600"><a href="index.html" >Logout</a></button>
+    </div>
+
+    <main>
+
+        <section id="manage_books" class="w-[80%] bg-slate-300 mx-auto mt-10 pt-8 pl-10 rounded-2xl">
+            <h2 class="text-2xl pb-4">Manage Books</h2>
+            <div>
+                <button  class="bg-blue-500 text-white py-2 px-4 mb-4 rounded-lg hover:bg-blue-600"><a href="addBook.html">Add New Book</a></button>
+                <Button class="bg-blue-500 text-white py-2 px-4 mb-4  rounded-lg hover:bg-blue-600">Update book</Button>
+                <button class="bg-blue-500 text-white py-2 px-4 mb-4 rounded-lg hover:bg-blue-600">View All Books</button>
+            </div>
+        </section>
+
+        <section id="manage_members" class="w-[80%] bg-slate-300 mx-auto mt-10 pt-8 pl-10 rounded-2xl">
+            <h2 class="text-2xl pb-4">Manage Members</h2>
+            <div>
+                <Button class="bg-blue-500 text-white py-2 px-4 mb-4  rounded-lg hover:bg-blue-600">Add New Member</Button>
+                <button class="bg-blue-500 text-white py-2 px-4 mb-4 rounded-lg hover:bg-blue-600">View All Members</button>
+            </div>
+        </section>
+
+        <section id="books_trans" class="w-[80%] bg-slate-300 mx-auto mt-10 pt-8 pl-10 rounded-2xl">
+            <h2 class="text-2xl pb-4">Book Transactions</h2>
+            <div>
+                <Button class="bg-blue-500 text-white py-2 px-4 mb-4  rounded-lg hover:bg-blue-600">Issue New Book</Button>
+                <button class="bg-blue-500 text-white py-2 px-4 mb-4 rounded-lg hover:bg-blue-600">Return Issued Book</button>
+            </div>
+        </section>
+        
+    </main>
+</body>
+</html>

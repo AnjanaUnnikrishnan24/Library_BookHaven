@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="bg-gray-800 p-4  fixed top-0 left-0 w-full z-10">
+        <div class="flex items-center justify-between">
+            <a href="#" class="text-white text-4xl italic font-bold">Book Haven</a>
+            <div class="space-x-8">
+                <a href="index.html" class="text-white text-2xl hover:text-gray-400">Home</a>
+                <a href="viewBook.html" class="text-white text-2xl hover:text-gray-400">Catalog</a>
+                <a href="AboutUs.html" class="text-white text-2xl hover:text-gray-400">About Us</a>
+                <button class="bg-blue-500 text-2xl text-white py-2 px-4  rounded hover:bg-blue-600"><a href="UserLogin.html">Log in</a></button>
+            </div>    
+        </div>
+    </nav>
+
+    <div class="flex flex-row gap-8 mt-[100px] ml-[260px] mr-10 mb-10 mx-auto">
+        <div>
+            <img src="/images/book001.jpeg" alt="book image" class="h-full w-full">
+        </div>
+        <div class="w-[50%]">
+            <h2 class="text-4xl mt-10 ">Create your Own Business</h2>
+            <table cellspacing="30px" class="mt-10 text-xl">
+                <tr >
+                    <td>Book title :</td>
+                    <td>Create your Own Business</td>
+                </tr>
+                <tr>
+                    <td>Author name :</td>
+                    <td>James Murdor</td>
+                </tr>
+                <tr>
+                    <td>Category :</td>
+                    <td>Business</td>
+                </tr>
+                <tr>
+                    <td>Edition:</td>
+                    <td>First edition</td>
+                </tr>
+                <tr>
+                    <td>Published Year :</td>
+                    <td>2022</td>
+                </tr>
+                <tr>
+                    <td>ISBN :</td>
+                    <td>20225484464</td>
+                </tr>
+                <tr>
+                    <td>Description :</td>
+                    <td>This comprehensive guide to starting your own business acts as an invaluable blueprint for your path to business success.
+                        It's the ultimate gift for entrepreneurs or anyone who wants to learn more about the world of business management.
+                    </td>
+                </tr>
+               <td><button  class="bg-green-500 text-white pt-2 pb-2 w-[180px] rounded hover:bg-green-600 mt-4 mb-4"><a href="#">Add to cart</a></button></td>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
