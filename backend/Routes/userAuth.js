@@ -2,26 +2,32 @@ import { Router } from "express";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import {user} from '../Models/user.js'
  
 dotenv.config();
 
 const userauth = Router();
-const user = new Map();
-
 
 userauth.post('/signup',async(req,res)=>{
     try{       
-        const { UserType,FullName,Email,Phonenumber,Address,UserName,Password } = req.body;
+        const { UserRole,FullName,Email,Phonenumber,Password } = req.body;
         console.log(FullName);
     
-        if(user.get(UserName)){
-            res.status(400).send("Username already exist") ;
+        const newPassword =await bcrypt.hash(Password,10);
+        console.log(newPassword);
+        const existinguser = await user.findOne({email:Email})
+        if(existinguser){
+            res.status(401).send("User already exit");
         }
         else{
-            const newPassword =await bcrypt.hash(Password,10);
-            console.log(newPassword);
-            user.set(UserName,{UserType,FullName,Email,Phonenumber,Address,Password:newPassword});
-            console.log(`${UserName} signed up successfully`);
+            const newuser = new user({
+                userRole:UserRole,
+                name:FullName,
+                email:Email,
+                phone:Phonenumber,
+                password:newPassword
+            });
+            await newuser.save();
             res.status(201).send("Signed-up successfully")
         }}
     catch{
@@ -31,17 +37,17 @@ userauth.post('/signup',async(req,res)=>{
 
 userauth.post('/login',async(req,res)=>{
     try{
-        const {UserName,Password}=req.body;
-        const result = user.get(UserName);
+        const {Email,Password}=req.body;
+        const result = await user.findOne({email:Email});
         if(!result){
-            res.status(400).send("Enter a valid username");
+            res.status(400).send("Enter a valid user email");
         }
         else{
-            console.log(result.Password);
-            const valid =await bcrypt.compare(Password,result.Password);
+            console.log(result.password);
+            const valid =await bcrypt.compare(Password,result.password);
             console.log(valid);
             if(valid){
-                const token = jwt.sign({UserName:UserName,UserType:result.UserType},process.env.SECRET_KEY,{expiresIn:'12h'});
+                const token = jwt.sign({Email:Email,UserRole:result.userRole},process.env.SECRET_KEY,{expiresIn:'4h'});
                 console.log(token);
                 res.cookie('authToken',token,
                 {
@@ -50,12 +56,12 @@ userauth.post('/login',async(req,res)=>{
                 res.status(200).json({message:"Logged in successfully"});
             }
             else{
-                res.status(401).send("Unauthorized access");
+                res.status(401).json({message:"Unauthorized access"});
             }
          }
     }
     catch{
-        res.status(500).send("Internal Server Error")
+        res.status(500).json({message:"Internal Server Error"})
     }
 })
 
