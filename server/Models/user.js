@@ -6,9 +6,13 @@ const userDetails = new Schema({
     email: { type: String, required: true, unique: true },
     phone: { type: String, required: true, unique: true },
     password: { type: String, required: true }, 
-})
+    address: { type: String, trim: true },
+    membershipId: { type: String, unique: true, trim: true },
+    status: { type: String, enum: ["active", "inactive", "suspended"], default: "active" },
+    borrowedBooks: [{ type: Schema.Types.ObjectId, ref: "Book" }],
+},{ timestamps: true })
 
-const user = model('Users',userDetails);
+const User = model('Users',userDetails);
 
-export { user };
+export { User };
 
