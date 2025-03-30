@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-6">Library Admin Dashboard</h2>
+        
+        <!-- Statistics Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <h3 class="text-xl font-semibold">Total Books</h3>
+                <p class="text-2xl font-bold text-blue-600">1500</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <h3 class="text-xl font-semibold">Active Members</h3>
+                <p class="text-2xl font-bold text-green-600">350</p>
+            </div>
+            <div class="bg-white p-6 shadow-lg rounded-lg text-center">
+                <h3 class="text-xl font-semibold">Books Issued</h3>
+                <p class="text-2xl font-bold text-red-600">120</p>
+            </div>
+        </div>
+
+        <!-- Book Categories with Count -->
+        <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <h3 class="text-lg font-semibold mb-4">Book Categories</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">All Books (1500)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Science (200)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Fiction (180)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Novel (220)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Sports (90)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Business (120)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Literary Fiction (130)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Biography (100)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Autobiography (85)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">History (95)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Encyclopedias (60)</button>
+                <button class="py-2 px-4 bg-gray-200 hover:bg-blue-600 hover:text-white rounded-lg text-xl">Economics (120)</button>
+            </div>
+        </div>
+
+        <!-- Recent Transactions Table -->
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <h3 class="bg-gray-800 text-white text-lg font-semibold py-3 px-4">Recent Transactions</h3>
+            <table class="w-full text-left">
+                <thead class="bg-gray-300">
+                    <tr>
+                        <th class="py-3 px-4">Member Name</th>
+                        <th class="py-3 px-4">Book Title</th>
+                        <th class="py-3 px-4">Issue Date</th>
+                        <th class="py-3 px-4">Return Date</th>
+                        <th class="py-3 px-4">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    <tr class="border-b">
+                        <td class="py-3 px-4">John Doe</td>
+                        <td class="py-3 px-4">The Great Gatsby</td>
+                        <td class="py-3 px-4">2025-03-20</td>
+                        <td class="py-3 px-4">2025-04-10</td>
+                        <td class="py-3 px-4 text-green-600">Returned</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="py-3 px-4">Jane Smith</td>
+                        <td class="py-3 px-4">1984</td>
+                        <td class="py-3 px-4">2025-03-25</td>
+                        <td class="py-3 px-4">2025-04-15</td>
+                        <td class="py-3 px-4 text-red-600">Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

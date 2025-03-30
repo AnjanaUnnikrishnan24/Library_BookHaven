@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="container mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-6">Manage Subscription Plans</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="py-3 px-4 text-left">Plan Name</th>
+                        <th class="py-3 px-4 text-left">Offer Price</th>
+                        <th class="py-3 px-4 text-left">Original Price</th>
+                        <th class="py-3 px-4 text-left">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-700">
+                    <tr class="border-b">
+                        <td class="py-3 px-4">Basic</td>
+                        <td class="py-3 px-4 text-red-500 font-bold">$49</td>
+                        <td class="py-3 px-4 text-green-400">$59</td>
+                        <td class="py-3 px-4">
+                            <button class="bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-700">Update</button>
+                            <button class="bg-red-500 text-white px-3 py-1 rounded-lg hover:bg-red-700 ml-2">Delete</button>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
