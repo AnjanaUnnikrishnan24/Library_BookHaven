@@ -2,7 +2,7 @@ import { Router } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import User from "../Models/user.js";
+import  User  from "../Models/user.js";
 
 dotenv.config();
 
@@ -86,4 +86,4 @@ userAuth.get("/logout", (req, res) => {
   res.status(200).json({ message: "Successfully logged out" });
 });
 
-export { userAuth };
+export default userAuth ;

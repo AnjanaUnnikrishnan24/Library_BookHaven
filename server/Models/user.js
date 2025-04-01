@@ -5,7 +5,7 @@ const userDetails = new Schema({
     email: { type: String, required: true, unique: true },
     phone: { type: String, required: true, unique: true },
     password: { type: String, required: true }, 
-    userRole: { type: String, enum: ["admin", "user"], required: true },
+    userRole: { type: String, enum: ["admin", "user"], default:"user"},
     lastLoginDate: { type: Date, default: Date.now },
     subscriptionPlan:{ type:Schema.Types.ObjectId ,ref:'Subscription',default:null },
     booksList: [{ type: Schema.Types.ObjectId, ref: "UserbookList" }],
@@ -13,5 +13,5 @@ const userDetails = new Schema({
 
 const User = model('Users',userDetails);
 
-export { User };
+export default User;
 
