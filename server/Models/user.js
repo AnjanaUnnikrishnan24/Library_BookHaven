@@ -6,9 +6,19 @@ const userDetails = new Schema({
     phone: { type: String, required: true, unique: true },
     password: { type: String, required: true }, 
     userRole: { type: String, enum: ["admin", "user"], default:"user"},
+
     lastLoginDate: { type: Date, default: Date.now },
-    subscriptionPlan:{ type:Schema.Types.ObjectId ,ref:'Subscription',default:null },
-    booksList: [{ type: Schema.Types.ObjectId, ref: "UserbookList" }],
+    subscriptionPlan:{ 
+        planId:{ type:Schema.Types.ObjectId ,ref:'Subscription',default:null },
+        startDate:{ type:Date },
+        endDate: { type:Date }
+    },
+    readingList: [
+        {
+          bookId: { type: Schema.Types.ObjectId, ref: "Book" },
+          addedAt: { type: Date, default: Date.now },
+        }
+    ]
 },{ timestamps: true });
 
 const User = model('Users',userDetails);

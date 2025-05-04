@@ -8,7 +8,7 @@ const bookRoutes = Router();
 
 bookRoutes.post("/addBook", authenticate, adminCheck, upload.single("image"), async (req, res) => {
     try {
-        const { bId, title, author, category, edition, year, description, publisher, language, noOfCopies, shelfNo, } = req.body;
+        const { bId, title, author, category, edition, publishedYear, description, publisher, language } = req.body;
 
         const existingBook = await Book.findOne({ bId });
         if (existingBook) {
@@ -17,7 +17,7 @@ bookRoutes.post("/addBook", authenticate, adminCheck, upload.single("image"), as
 
         let imageBase64 = null;
         if (req.file) {
-            imageBase64 = convertToBase64(req.file.buffer);
+            imageBase64 = req.file.path;
         }
 
         const newBook = new Book({
@@ -26,17 +26,12 @@ bookRoutes.post("/addBook", authenticate, adminCheck, upload.single("image"), as
             author,
             category,
             edition,
-            year: parseInt(year),
+            publishedYear: parseInt(publishedYear),
             description,
             publisher,
             language,
-            noOfCopies: parseInt(noOfCopies),
-            borrowedCopies: 0,  
-            leftCopies: parseInt(noOfCopies), 
             image: imageBase64,
-            shelfNo,
-            status: parseInt(noOfCopies) > 0 ? "available" : "unavailable", 
-        });
+         });
 
         await newBook.save();
         res.status(201).json({ message: "Book added successfully", book: newBook });
@@ -60,16 +55,10 @@ bookRoutes.put("/updateBook/:bId", authenticate, adminCheck, upload.single("imag
         if (updateData.author) book.author = updateData.author;
         if (updateData.category) book.category = updateData.category;
         if (updateData.edition) book.edition = updateData.edition;
-        if (updateData.year) book.year = parseInt(updateData.year);
+        if (updateData.publishedYear) book.publishedYear = parseInt(updateData.publishedYear);
         if (updateData.description) book.description = updateData.description;
         if (updateData.publisher) book.publisher = updateData.publisher;
         if (updateData.language) book.language = updateData.language;
-        if (updateData.noOfCopies) {
-            book.noOfCopies = parseInt(updateData.noOfCopies);
-            book.leftCopies = book.noOfCopies - book.borrowedCopies; 
-            book.status = book.leftCopies > 0 ? "available" : "unavailable"; 
-        }
-        if (updateData.shelfNo) book.shelfNo = updateData.shelfNo;
         if (req.file) book.image = req.file.path;
 
         await book.save();
@@ -100,7 +89,7 @@ bookRoutes.get("/viewBook/:bId", async (req, res) => {
     try {
         const { bId } = req.params;
 
-        const book = await Book.findOne({ bId }).populate("category"); // Populate category details if needed
+        const book = await Book.findOne({ bId }).populate("category"); 
         if (!book) {
             return res.status(404).json({ message: "Book not found" });
         }
